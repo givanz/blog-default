@@ -1,0 +1,59 @@
+@@include('./_includes/html-head.html', {"title": "Blog - 404 Page not found!", "path":""})
+
+<body class="error-404">
+
+@@include('./_includes/header.html')
+
+	<section class="inner-page-hero">
+		 <div>
+			<div class="title-container">
+				<div class="container text-center">
+					<h1>Not found</h1>
+					
+				</div>
+			</div>
+		   
+		</div>
+	</section>
+
+
+  <main id="site-content" role="main">
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+		<h1>Page not found!</h1>
+		<p>The page you are looking for does not exist, try to use search or go to <a href="/">homepage</a></p>
+
+		<div data-debug class="my-3">
+			<hr>
+			<h5>Debug info</h5>
+			<p data-v-exception-message style="white-space: pre-wrap;">Message</strong>
+			<p data-v-exception-file>File</strong> on line <strong data-v-exception-line_no>1</strong></p>
+		</div>
+
+
+	  </div>
+
+	  @@include('./_includes/sidebar.html', {"cols": "col-md-5 col-lg-4 col-xl-3"})
+
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+  </main>	
+
+@@include('./_includes/footer.html')
+
+	@@include('./_includes/footer-scripts.html')    
+
+  	
+</body>
+</html>

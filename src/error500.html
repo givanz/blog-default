@@ -1,0 +1,90 @@
+@@include('./_includes/html-head.html', {"title": "Blog - 500 Internal server error!", "path":""})
+
+<body class="error-500">
+
+@@include('./_includes/header.html')
+
+	<section class="inner-page-hero">
+		 <div>
+			<div class="title-container">
+				<div class="container text-center">
+					<h1>Server error</h1>
+					
+				</div>
+			</div>
+		   
+		</div>
+	</section>
+
+
+  <main id="site-content" role="main">
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8" data-v-component-posts="popular" data-v-limit="10">
+
+		<h1>Internal server error!</h1>
+		<p>
+			The site is experiencing some dificulties, please try again, if the problem still persists please contact support.
+		</p>	
+		
+		
+		<div data-debug>
+			<h6>Error</h6>		
+			<div class="card">
+				<div class="card-body">
+					<p data-v-exception-message style="white-space: pre-wrap;">Message</p>
+				</div>		
+			</div>		
+
+			<h6>File</h6>		
+			<div class="card">
+				<div class="card-body">
+					<p data-v-exception-file>File</strong> on line <strong data-v-exception-line_no>1</p>
+				</div>
+			</div>
+				
+
+			<h6>Code</h6>		
+			<p data-v-exception-line></strong>
+			<div class="card">
+				<div class="card-body" data-v-exception-lines>
+					<p data-v-exception-line style="white-space: pre-wrap;">line</p>
+				</div>
+			</div>
+
+			<!-- div class="card">
+				<div class="card-body">
+					<p data-v-exception-code style="white-space: pre-wrap;"></p>
+				</div>						
+			</div -->						
+
+			<h6>Trace</h6>		
+			<div class="card">
+				<div class="card-body">
+					<p class="card-body" data-v-exception-trace style="white-space: pre-wrap;">Trace</p>
+				</div>
+			</div>
+		</div>
+
+	  </div>
+
+	  @@include('./_includes/sidebar.html', {"cols": "col-md-5 col-lg-4 col-xl-3"})
+
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+  </main>	
+
+@@include('./_includes/footer.html')
+
+	@@include('./_includes/footer-scripts.html')    
+
+</html>
