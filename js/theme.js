@@ -24,8 +24,10 @@ function toggleNavbarTheme () {
 
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function navbarSticky() {
-  let isSticky = (window.pageYOffset >= sticky);		
+function navbarSticky(isSticky) {
+  if (isSticky == undefined) {
+	  isSticky = (window.pageYOffset >= sticky);		
+  }
 		
   if (isSticky) {
 	  if (!navbar.classList.contains("sticky")) {
@@ -40,13 +42,20 @@ function navbarSticky() {
   }
 }
 
-let theme = $("html").attr("data-bs-theme");
-if (theme) {
-	if (theme == "dark") {
-		$("#color-theme-switch i").removeClass("la-sun").addClass("la-moon");
-	}
-	//$("html").attr("data-bs-theme", theme);
+function setCookie(name, value) {
+	document.cookie = name + "=" + value + ";";
+	//try to set cookie to all subdomains
+	document.cookie = name + "=" + value + ";path=/;domain=." + window.location.host.replace(/^.*?\./, '') + ";";
 }
+
+let theme = $("html").attr("data-bs-theme");
+if (theme && theme == "dark" || document.cookie.indexOf("theme=dark") > 0) {
+		$("#color-theme-switch i").removeClass("la-sun").addClass("la-moon");
+	$("html").attr("data-bs-theme", "dark");
+} else {
+	$("#color-theme-switch i").removeClass("la-moon").addClass("la-sun");
+}
+//$("html").attr("data-bs-theme", theme);
 
 $("#color-theme-switch").click(function () {
 	
@@ -64,6 +73,11 @@ $("#color-theme-switch").click(function () {
 
 	$("html").attr("data-bs-theme", theme);
 	//localStorage.setItem("theme", theme);
-	document.cookie = "theme=" + theme + ";path=/;";
+	setCookie("theme", theme);
 	//serverStorage.setItem();
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('js/service-worker.js').then((function(t) {})).catch((function(t) {}));
+}
+

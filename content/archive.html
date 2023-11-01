@@ -52,7 +52,7 @@
           </a>
           <small class="d-block text-muted" data-v-site-description>minimal blog template</small>
 
-          <div class="w-100 text-right">
+          <div class="w-100 text-end">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,7 +60,7 @@
         </div>
 
 
-        <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbar" data-v-component-menu="header" data-v-slug="main-menu">
+        <div class="collapse navbar-collapse flex-grow-1 text-end" id="navbar" data-v-component-menu="header" data-v-slug="main-menu">
           <ul class="navbar-nav ms-auto flex-nowrap" data-v-menu-items>
             <li class="nav-item dropdown" data-v-menu-item data-v-class-if-has-dropdown="category.children > 0">
 
@@ -428,7 +428,7 @@
                     </span>
                     <span class="meta-text">
                       <a href="content/post.html" data-v-post-url>
-                        <span data-v-post-date_added data-filter-friendly_date>December 31, 2020</span>
+                        <span data-v-post-created_at data-filter-friendly_date>December 31, 2020</span>
                       </a>
                     </span>
                   </li>
@@ -516,30 +516,61 @@
 
             <div class="card-footer text-muted">
 
-              <div data-v-component-content-categories="blog-post" data-v-type="tags" data-v-post_id="url">
-                <div>
-                  <ul data-v-cats class="tags">
-                    <li data-v-cat>
-                      <a href="content/tag.html" data-v-cat-url>
-                        <span data-v-cat-name>tag 1</span>
-                      </a>
-                    </li>
-                    <li data-v-cat>
-                      <a href="content/tag.html" data-v-cat-url>
-                        <span data-v-cat-name>tag 2</span>
-                      </a>
-                    </li>
-                    <li data-v-cat>
-                      <a href="content/tag.html" data-v-cat-url>
-                        <span data-v-cat-name>tag 3</span>
-                      </a>
-                    </li>
-                    <li data-v-cat>
-                      <a href="content/tag.html" data-v-cat-url>
-                        <span data-v-cat-name>tag 4</span>
-                      </a>
-                    </li>
-                  </ul>
+              <div class="d-flex tags">
+                <div data-v-categories>
+                  <div data-v-if="categories > 0" class="me-4">
+                    <i class="la la-archive"></i>
+                    <ul class="tags d-inline-block">
+                      <li data-v-categories-cat>
+                        <a href="#" data-v-categories-cat-url>
+                          <span data-v-categories-cat-name>cat 1</span>
+                        </a>
+                      </li>
+                      <li data-v-categories-cat>
+                        <a href="#" data-v-tag-url>
+                          <span data-v-cat-name>cat 2</span>
+                        </a>
+                      </li>
+                      <li data-v-categories-cat>
+                        <a href="#" data-v-cat-url>
+                          <span data-v-cat-name>cat 3</span>
+                        </a>
+                      </li>
+                      <li data-v-categories-cat>
+                        <a href="#" data-v-cat-url>
+                          <span data-v-cat-name>cat 4</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div data-v-tags>
+                  <div data-v-if="tags > 0">
+                    <i class="la la-tag"></i>
+                    <ul class="tags d-inline-block">
+                      <li data-v-tags-tag>
+                        <a href="#" data-v-tags-tag-url>
+                          <span data-v-tags-tag-name>tag 1</span>
+                        </a>
+                      </li>
+                      <li data-v-tags-tag>
+                        <a href="#" data-v-tag-url>
+                          <span data-v-cat-name>tag 2</span>
+                        </a>
+                      </li>
+                      <li data-v-tags-tag>
+                        <a href="#" data-v-tag-url>
+                          <span data-v-cat-name>tag 3</span>
+                        </a>
+                      </li>
+                      <li data-v-tags-tag>
+                        <a href="#" data-v-tag-url>
+                          <span data-v-cat-name>tag 4</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
@@ -695,13 +726,13 @@
                     <span data-v-comment-author>John Doe</span>
                     <span>on</span>
                     <a href="content/post.html#comments" data-v-comment-url>
-                      <span data-v-comment-name>January 2021</span>
+                      <span data-v-comment-name>Post name</span>
                     </a>
                   </div>
                   <div data-v-comment>
                     <span data-v-comment-author>John Doe</span> on
                     <a href="content/post.html#comments" data-v-comment-url>
-                      <span data-v-comment-name>January 2021</span>
+                      <span data-v-comment-name>Post name</span>
                     </a>
                   </div>
                 </div>

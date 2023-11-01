@@ -134,6 +134,13 @@ ul.tags {
 			text-decoration:none;
 		}
 	}
+	
+	li+li::before {
+		float: left;
+		padding-right: 0.3rem;
+		color: var(--bs-border-color);
+		content: var(--bs-breadcrumb-divider, "|");
+	}
 }
 
 .img-fluid {

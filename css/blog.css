@@ -89,7 +89,7 @@
     margin-bottom: 0rem; }
   .post .card-footer {
     /* padding: 0.5rem 1rem; */
-    padding: 1rem; }
+    padding: 0 0rem 1rem; }
   .post .post-meta {
     list-style: none;
     text-align: center;
