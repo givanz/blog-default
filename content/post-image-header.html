@@ -14,9 +14,15 @@
 
   <link href="css/style.css" rel="stylesheet">
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico" data-v-global-site-favicon>
+
+  <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed/posts" />
+  <link rel="alternate" type="application/rss+xml" title="Comments Feed" href="/feed/comments" />
+
+  <link rel="icon" type="image/x-icon" href="../../media/favicon.ico" data-v-global-site-favicon>
 
   <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="alternate" hreflang="" href="" />
 
   <link rel="stylesheet" href="js/aos.css">
   <noscript>
@@ -249,7 +255,7 @@
                         </div>
 
 
-                        <form action method="post" enctype="multipart/form-data" data-v-url="user/login" data-v-vvveb-action="login" data-v-vvveb-on="submit">
+                        <form action method="post" enctype="multipart/form-data" data-v-url="user/login" data-v-vvveb-action="login" data-v-vvveb-on="submit" class="login-form">
 
                           <input type="hidden" name="csrf" data-v-csrf>
 
@@ -265,7 +271,7 @@
                               <input type="password" minlength="4" autocorrect="off" autocomplete="current-password" name="password" value="" placeholder="Password" id="input-password" class="form-control" required>
                             </div>
 
-                            <button type="submit" value="Login" class="btn btn-primary 	w-100	">
+                            <button type="submit" value="Login" class="btn btn-primary btn-login w-100">
 
                               <span class="loading d-none">
                                 <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -294,8 +300,8 @@
 						</span>
 		</a> -->
                             <hr>
-                            <span>Don’t have an account?</strong>
-                              <a href="/user/signup" data-v-url="user/signup/index">Register Account</a>
+                            <span>Don’t have an account?</span>
+                            <a href="/user/signup" data-v-url="user/signup/index">Register Account</a>
 
                           </div>
 
@@ -326,7 +332,7 @@
 
                             <input type="hidden" name="logout">
 
-                            <button type="submit" value="logout" class="btn btn-primary 	w-100	">
+                            <button type="submit" value="logout" class="btn btn-primary w-100">
 
                               <span class="loading d-none">
                                 <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -572,13 +578,13 @@
           <div id="comments" class="post-comments mt-4" data-v-component-comments>
             <h4 class="comments-title">Comments</h4>
 
-            <ol class="comment-list list-unstyled mb-3">
+            <ol class="comment-list list-unstyled mb-3" data-v-if="count > 0">
               <li class="comment mb-4" data-v-comment>
 
                 <div class="comment-wrap d-flex ">
 
                   <figure class="comment-author-avatar me-2">
-                    <img src="http://placehold.it/60x60" alt="user" width="60" height="60" data-v-comment-avatar data-v-if="comment.avatar">
+                    <img src="http://placehold.it/60x60" alt="user" width="60" height="60" data-v-comment-avatar data-v-if="comment.avatar" loading="lazy" data-v-if="comment.avatar">
                   </figure>
 
                   <div class="comment-author">
@@ -618,8 +624,8 @@
 
                 <div class="comment-wrap d-flex ">
 
-                  <figure class="comment-author-avatar me-2">
-                    <img src="http://placehold.it/60x60" alt="user" width="60" height="60" data-v-comment-avatar data-v-if="comment.avatar">
+                  <figure class="author-avatar me-2">
+                    <img src="http://placehold.it/60x60" alt="user" width="60" height="60" data-v-comment-avatar loading="lazy" data-v-if="comment.avatar">
                   </figure>
 
                   <div class="comment-author">
@@ -656,7 +662,7 @@
 
                 <div class="comment-wrap d-flex ">
 
-                  <figure class="comment-author-avatar me-2">
+                  <figure class="author-avatar me-2">
                     <img src="http://placehold.it/60x60" alt="user" width="60" height="60" data-v-comment-avatar loading="lazy" data-v-if="comment.avatar">
                   </figure>
 
@@ -693,82 +699,79 @@
 
               </li>
             </ol>
-          </div>
 
+            <div class="comments-form">
 
-          <div class="comments-form">
+              <div class="notifications" data-v-notifications>
 
-            <div class="notifications" data-v-notifications>
+                <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
 
-              <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+                  <div class="icon align-middle me-2">
+                    <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+                  </div>
 
-                <div class="icon align-middle me-2">
-                  <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
-                </div>
-
-                <div class="flex-grow-1 align-self-center text-small">
-                  <div>
-                    <div data-v-notification-text>
-                      This is a placeholder for a notification message.
+                  <div class="flex-grow-1 align-self-center text-small">
+                    <div>
+                      <div data-v-notification-text>
+                        This is a placeholder for a notification message.
+                      </div>
                     </div>
                   </div>
+
+
+                  <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <!-- <i class="la la-times"></i> -->
+                    </span>
+                  </button>
                 </div>
 
+                <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
 
-                <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
-                  </span>
-                </button>
+                  <div class="icon align-middle me-2">
+                    <i class="align-middle la la-2x lh-1 la-check-circle"></i>
+                  </div>
+
+                  <div class="flex-grow-1 align-self-center align-middle" data-v-notification-text>
+                    This is a placeholder for a success message.
+                  </div>
+
+                  <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <!-- <i class="la la-times"></i> -->
+                    </span>
+                  </button>
+                </div>
+
+                <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+                  <div class="icon align-middle me-2">
+                    <i class="align-middle la la-2x lh-1  la-info-circle"></i>
+                  </div>
+
+                  <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                    This is a placeholder for a info message.
+                  </div>
+
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                      <!-- <i class="la la-times"></i> -->
+                    </span>
+                  </button>
+                </div>
+
               </div>
 
-              <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
 
-                <div class="icon align-middle me-2">
-                  <i class="align-middle la la-2x lh-1 la-check-circle"></i>
-                </div>
-
-                <div class="flex-grow-1 align-self-center align-middle" data-v-notification-text>
-                  This is a placeholder for a success message.
-                </div>
-
-                <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
-                  </span>
-                </button>
-              </div>
-
-              <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
-
-                <div class="icon align-middle me-2">
-                  <i class="align-middle la la-2x lh-1  la-info-circle"></i>
-                </div>
-
-                <div class="flex-grow-1 align-self-center" data-v-notification-text>
-                  This is a placeholder for a info message.
-                </div>
-
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">
-                    <!-- <i class="la la-times"></i> -->
-                  </span>
-                </button>
-              </div>
-
-            </div>
-
-
-            <div>
               <h5>Leave a reply</h5>
-              <span class="replyto" style="display:none">
+              <div class="replyto" style="display:none">
                 <h3>Reply to <b data-comment-author>author</b>
                 </h3>
                 <a href="#comment-form" class="reply-btn d-inline-block" data-comment_id="0" data-v-vvveb-action="replyTo">
                   Cancel reply
                   <i class="la la-window-close"></i>
                 </a>
-              </span>
+              </div>
 
 
               <div class="loggedin mb-3" data-v-if="this.global.user_id">
@@ -795,7 +798,6 @@
 
                     <span class="button-text">
                       Logout <i class="la la-sign-out-alt"></i>
-                      </a>
                     </span>
 
                   </button>
@@ -803,7 +805,7 @@
 
               </div>
 
-              <form id="comment-form" method="post" action="" data-v-vvveb-action="addComment" data-v-vvveb-on="submit">
+              <form id="comment-form" method="post" action="#" data-v-vvveb-action="addComment" data-v-vvveb-on="submit">
 
                 <input type="hidden" name="post_id" data-v-post-post_id>
                 <input type="hidden" name="slug" data-v-post-slug>
@@ -816,11 +818,11 @@
 
                 <div data-v-if-not="this.global.user_id">
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <label for="author" class="form-label">Name</label>
                     <input type="text" placeholder="Name" name="author" class="form-control" required>
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Email address</label>
+                    <label for="email" class="form-label">Email address</label>
                     <input type="email" placeholder="Email" name="email" class="form-control" required>
                   </div>
                 </div>
@@ -834,7 +836,7 @@
 
                 <input type="text" class="form-control visually-hidden" placeholder="Last name" name="lastname-empty" tabindex="-1">
 
-                <button type="submit" value="comment" class="btn btn-primary">
+                <button type="submit" value="comment" class="btn btn-primary btn-submit">
                   <span class="loading d-none">
                     <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
                     <span>Posting</span>...
@@ -969,7 +971,7 @@
   <!-- <script src="js/bootstrap.min.js"></script> -->
   <script src="js/bootstrap.min.js"></script>
   <!-- Vvveb Ajax Common Js -->
-  <script src="../../js/app.js"></script>
+  <script id="app-js" src="../../js/app.js"></script>
 
   <!-- Animation -->
   <script src="js/aos.js"></script>
