@@ -114,4 +114,15 @@
 			}
 		}	
 	}	
+	
+	 .position-static {
+		.dropdown-item {
+			white-space:normal;
+		}
+	}
+}
+
+.navbar .navbar-nav a.nav-link, .navbar .navbar-nav a.nav-link span:last-child {
+	display:inline-block;
+    white-space: nowrap;	
 }

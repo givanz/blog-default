@@ -78,6 +78,20 @@ h1, h2, h3, h4, h5, h6  {
 	font-weight:bold;
 }
 
+.navbar-nav {
+	align-items: center;
+}
+
+.navbar .navbar-nav a.nav-link, .navbar .navbar-nav a.nav-link span:last-child {
+	display:inline-block;
+    white-space: nowrap;	
+}
+
+.navbar-nav a.nav-link span > p:last-child {
+	margin-bottom:0;
+}
+
+
 .sidebar-sticky {
 	position: -webkit-sticky;
 	position: sticky;

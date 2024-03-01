@@ -11,10 +11,10 @@
 					
 					<div class="mb-3">
 						<label class="form-label" for="input-password">Password</label>
-			<input type="password" minlength="4" autocorrect="off" autocomplete="current-password" name="password" value="" placeholder="Password" id="input-password" class="form-control" required>
+						<input type="password" minlength="4" autocorrect="off" autocomplete="current-password" name="password" value="" placeholder="Password" id="input-password" class="form-control" required>
 					</div>
 					
-		<button type="submit" value="Login" class="btn btn-primary btn-login@@if (typeof btnClass !== "undefined"){ @@btnClass}">
+					<button type="submit" value="Login" class="btn btn-primary btn-login@@if (typeof btnClass !== "undefined"){ @@btnClass}">
 						
 						<span class="loading d-none">
 							<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
@@ -23,7 +23,7 @@
 						</span>
 
 						<span class="button-text">
-				Login <i class="la la-arrow-right float-end ms-2"></i>
+							Login <i class="la la-arrow-right float-end ms-2"></i>
 						</span>
 					
 					</button>	
@@ -31,19 +31,9 @@
 					<a href="/user/reset" data-v-url="user/reset/index" class="my-2">Forgotten Password</a>
 					
 					<div class="my-2"></div>
-		<!--
-					<a href="#">
-			<span class="btn btn-secondary btn-sm">
-							  <i class="lab la-google la-lg"></i>
-						</span>
-					</a>
-					<a href="#">
-			<span class="btn btn-secondary btn-sm">
-						  <i class="lab la-facebook la-lg"></i>
-						</span>
-		</a> -->
+
 					<hr>
-		<span>Don’t have an account?</span>
+					<span>Don’t have an account?</span>
 					<a href="/user/signup" data-v-url="user/signup/index">Register Account</a>						
 								
 				</div>							
@@ -58,23 +48,23 @@
 			<li><a href="user/orders" data-v-url="user/orders/index">Orders</a></li>
 			<li><a href="user/downloads" data-v-url="user/downloads/index">Downloads</a></li>
 			<li><a href="user/profile" data-v-url="user/profile/index">Profile</a></li>
-					  </ul>									
+		  </ul>									
 
 
-					<input type="hidden" name="logout">
-					
+		<input type="hidden" name="logout">
+		
 		<button type="submit" value="logout" class="btn btn-primary@@if (typeof btnClass !== "undefined"){ @@btnClass}">
-						
-						<span class="loading d-none">
-							<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-							</span>
-							<span>Loading ...</span>...
-						</span>
+			
+			<span class="loading d-none">
+				<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+				</span>
+				<span>Loading ...</span>...
+			</span>
 
-						<span class="button-text">
-							Logout
-						</span>
-					
-					</button>	
-				</div>
-			</form>
+			<span class="button-text">
+				Logout
+			</span>
+		
+		</button>	
+	</div>
+</form>
