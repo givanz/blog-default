@@ -1,5 +1,7 @@
 .post {
   margin-bottom: 0rem; }
+  .post .post-archive-item {
+    margin-bottom: 2rem; }
   .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
     line-height: 1.4;
     font-weight: bold;

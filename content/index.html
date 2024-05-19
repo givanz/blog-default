@@ -71,7 +71,7 @@
           <ul class="navbar-nav ms-auto flex-nowrap" data-v-menu-items>
             <li class="nav-item dropdown position-static" data-v-menu-item data-v-class-if-has-dropdown="category.children > 0" data-v-class-if-position-static="category.has-text">
 
-              <a class="nav-link dropdown-toggle" href="#" data-v-class-if-dropdown-toggle="category.children > 0" aria-expanded="false" data-v-menu-item-url>
+              <a class="nav-link dropdown-toggle" href="#" data-v-class-if-dropdown-toggle="category.children > 0" data-v-class-if-active="category.active" aria-expanded="false" data-v-menu-item-url>
                 <span data-v-menu-item-name data-v-if-not="category.type = 'text'"></span>
                 <span data-v-menu-item-content>
                   <p>
@@ -82,7 +82,7 @@
 
               <div class="dropdown-menu" data-v-menu-item-recursive>
                 <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children > 0">
-                  <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <a class="dropdown-item" data-v-class-if-active="category.active" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
                     <span data-v-menu-item-name data-v-if-not="category.type = 'text'"></span>
                     <span data-v-menu-item-content>
                       <div class="row">
@@ -105,7 +105,7 @@
                   </a>
                 </div>
                 <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children > 0">
-                  <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-class-if-active="category.active" data-v-menu-item-url>
                     <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
                     <span data-v-menu-item-content></span>
                   </a>
@@ -221,153 +221,6 @@
                 <i class="la la-sun la-lg"></i>
               </a>
             </li>
-            <!--	
-		  <li>
-			<div class="dropdown user-box nav-item">
-		<a class="dropdown-toggle nav-link " href role="button" id="user-dropdown" data-bs-toggle="dropdown" aria-expanded="false" data-v-url="user/index">
-			<i class="la la-lg la-user"></i><span class="visually-hidden">User</span>
-		</a>
-
-		<div class="dropdown-menu dropdown-menu-end login-box p-4" aria-labelledby="user-dropdown">
-			
-			<div data-v-component-user>							
-									
-				<div class="notifications" data-v-notifications>
-
-	<div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error  data-v-type="login" >
-
-		<div class="icon align-middle me-2">
-			<i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
-		</div>
-
-		<div class="flex-grow-1 align-self-center text-small" >
-			<div>
-				<div data-v-notification-text>
-					This is a placeholder for a notification message.
-				</div>
-			</div>
-		</div>
-
-
-		<button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">
-			</span>
-		</button>
-	</div>
-
-	<div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success  data-v-type="login" >
-
-		<div class="icon align-middle me-2">
-			<i class="align-middle la la-2x lh-1 la-check-circle"></i>
-		</div>
-
-		<div class="flex-grow-1 align-self-center align-middle" data-v-notification-text>
-			This is a placeholder for a success message.
-		</div>
-
-		<button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">
-			</span>
-		</button>
-	</div>
-	
-	<div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info  data-v-type="login" >
-
-		<div class="icon align-middle me-2">
-			<i class="align-middle la la-2x lh-1  la-info-circle"></i>
-		</div>
-
-		<div class="flex-grow-1 align-self-center" data-v-notification-text>
-			This is a placeholder for a info message.
-		</div>
-
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">
-			</span>
-		</button>
-	</div>
-
-</div>
-
-
-				<form action method="post" enctype="multipart/form-data" data-v-url="user/login" data-v-vvveb-action="login" data-v-vvveb-on="submit" class="login-form">
-				
-				<input type="hidden" name="csrf" data-v-csrf>
-				
-				<div class="login-form" data-v-if-not="component.user_id">
-					
-					<div class="mb-3">
-						<label class="form-label" for="input-email">E-Mail Address</label>
-						<input type="email" name="email" value placeholder="E-Mail Address" id="input-email" class="form-control" required>
-					</div>
-					
-					<div class="mb-3">
-						<label class="form-label" for="input-password">Password</label>
-						<input type="password" minlength="4" autocorrect="off" autocomplete="current-password" name="password" value="" placeholder="Password" id="input-password" class="form-control" required>
-					</div>
-					
-					<button type="submit" value="Login" class="btn btn-primary btn-login w-100">
-						
-						<span class="loading d-none">
-							<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-							</span>
-							<span>Authenticating</span>...
-						</span>
-
-						<span class="button-text">
-							Login <i class="la la-arrow-right float-end ms-2"></i>
-						</span>
-					
-					</button>	
-					<div class="my-2"></div>
-					<a href="/user/reset" data-v-url="user/reset/index" class="my-2">Forgotten Password</a>
-					
-					<div class="my-2"></div>
-
-					<hr>
-					<span>Don’t have an account?</span>
-					<a href="/user/signup" data-v-url="user/signup/index">Register Account</a>						
-								
-				</div>							
-				
-				
-	<div class="user-form" data-v-if="component.user_id">
-		<div>Welcome <b data-v-user-first_name data-filter-capitalize>John</b> <b data-v-user-last_name data-filter-capitalize>Doe</b></div>
-
-		  <ul class="m-2 list-unstyled">
-			<li><a href="user" data-v-url="user/index">My account</a></li>
-			<li><a href="user/comments" data-v-url="user/comments/index">Comments</a></li>
-			<li><a href="user/orders" data-v-url="user/orders/index">Orders</a></li>
-			<li><a href="user/downloads" data-v-url="user/downloads/index">Downloads</a></li>
-			<li><a href="user/profile" data-v-url="user/profile/index">Profile</a></li>
-		  </ul>									
-
-
-		<input type="hidden" name="logout">
-		
-		<button type="submit" value="logout" class="btn btn-primary w-100">
-			
-			<span class="loading d-none">
-				<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-				</span>
-				<span>Loading ...</span>...
-			</span>
-
-			<span class="button-text">
-				Logout
-			</span>
-		
-		</button>	
-	</div>
-</form>
-
-
-		</div>
-	</div>
-</div>
-
-		  </li>
-		  -->
 
           </ul>
 
@@ -399,6 +252,27 @@
 
     <!-- Page Content -->
     <div class="container">
+      <div class="mb-4">
+        <nav aria-label="breadcrumb" class="text-muted text-small" data-v-component-breadcrumb>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" data-v-breadcrumb-item>
+              <a href="#" data-v-breadcrumb-item-url data-v-if="breadcrumb.url">
+                <span data-v-breadcrumb-item-text>Home</span>
+              </a>
+              <span data-v-breadcrumb-item-text data-v-if-not="breadcrumb.url">Home</span>
+            </li>
+            <li class="breadcrumb-item" data-v-breadcrumb-item>
+              <a href="#" data-v-breadcrumb-item-url data-v-if="breadcrumb.url">
+                <span data-v-breadcrumb-item-text>Library</span>
+              </a>
+              <span data-v-breadcrumb-item-text data-v-if-not="breadcrumb.url">Library</span>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page" data-v-breadcrumb-item>
+              <span>Data</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
 
       <div class="row">
 
@@ -708,7 +582,7 @@
             </div>
 
             <!-- Recent posts Widget -->
-            <div class="card archives-widget" data-v-component-posts="recent-posts-sidebar" data-v-limit="4">
+            <div class="card archives-widget" data-v-component-posts="recent-posts-sidebar" data-v-page="1" data-v-limit="4">
               <div>
                 <h6 class="card-header">Recent posts</h6>
                 <div class="card-body">
@@ -729,7 +603,7 @@
             </div>
 
             <!-- Recent comments Widget -->
-            <div class="card archives-widget" data-v-component-comments="recent-comments-sidebar" data-v-limit="4" data-v-post_title="true" data-v-order="desc">
+            <div class="card archives-widget" data-v-component-comments="recent-comments-sidebar" data-v-page="1" data-v-limit="4" data-v-post_title="true" data-v-order="desc">
               <div>
                 <h6 class="card-header">Recent comments</h6>
                 <div class="card-body">
@@ -874,7 +748,7 @@
 
       <div class="row" data-v-menu-items>
 
-        <div class="col-md-3">
+        <div class="col-md">
 
           <div data-v-component-site>
             <img src="img/logo-white.png" class="logo-default-dark" data-v-site-logo-dark>
@@ -884,7 +758,7 @@
         </div>
 
 
-        <div class="col-md-3" data-v-menu-item data-v-if="category.children > 0">
+        <div class="col-md" data-v-menu-item data-v-if="category.children > 0">
           <h6 data-v-menu-item-name>Vvveb</h6>
           <nav data-v-menu-item-recursive>
             <div data-v-menu-item data-v-if="category.children == 0">
@@ -900,7 +774,7 @@
           </nav>
         </div>
 
-        <div class="col-md-3" data-v-menu-item data-v-if="category.children > 0">
+        <div class="col-md" data-v-menu-item data-v-if="category.children > 0">
           <h6 data-v-menu-item-name>Resources</h6>
           <nav data-v-menu-item-recursive>
             <div data-v-menu-item data-v-if="category.children == 0">
@@ -916,11 +790,11 @@
           </nav>
         </div>
 
-        <div class="col-md-3" data-v-menu-item data-v-if="category.children > 0">
+        <div class="col-md" data-v-menu-item data-v-if="category.children > 0">
           <h6 data-v-menu-item-name>Contact</h6>
           <nav data-v-menu-item-recursive>
             <div data-v-menu-item data-v-if="category.children == 0">
-              <a href="" src="contact.html">Contact</a>
+              <a href="" href="contact.html">Contact</a>
             </div>
           </nav>
         </div>
@@ -942,8 +816,8 @@
       <div class="container">
         <div class="d-flex flex-column flex-md-row">
           <div class="text-muted flex-grow-1">
-            <a class="btn-link text-muted" href="content/page.html" target="_blank">Terms and conditions</a> |
-            <a class="btn-link text-muted" href="content/page.html" target="_blank">Privacy Policy</a>
+            <a class="btn-link text-muted" href="content/page.html">Terms and conditions</a> |
+            <a class="btn-link text-muted" href="content/page.html">Privacy Policy</a>
           </div>
           <div class="text-muted">
             &copy; <span data-v-year>2023</span>

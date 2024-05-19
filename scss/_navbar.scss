@@ -1,6 +1,6 @@
-@media screen and (max-width: 767px) {
-	.navbar-collapse.show {
-		/*background: #fff;*/
+.navbar-collapse.collapsing {
+	.nav-item.dropdown .dropdown-toggle + .dropdown-menu {
+		display:none;
 	}
 }
 
@@ -98,6 +98,7 @@
 				transform: translateY(0);
 				opacity:1;
 				visibility:visible;
+				display:block;
 			}
 			
 			&:hover {
