@@ -12,9 +12,8 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
-    "gulp-format-html": "^1.2.5",
-    "sass": "^1.59.3",
-    "node-sass": "^8.0.0",
-    "gulp-sass": "^5.1.0"
+    "gulp-format-html": "^2.3.0",
+    "sass": "^1.71.1",
+    "node-sass": "^9.0.0"
   }
 }
