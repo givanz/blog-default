@@ -375,19 +375,12 @@
           </ul>
 
 
-          <form class="d-flex">
-
-            <div class="input-group">
-              <!-- input type="text" class="form-control" placeholder="Search for..." -->
-              <span class="input-group-append">
-                <button class="btn la-flip-horizontal" type="button">
-
-                  <i class="la la-search"></i>
-                </button>
-              </span>
+          <button class="btn btn-outline-secondary border-0" type="submit" title="Search" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <div class="la-flip-horizontal">
+              <i class="la la-search la-lg" aria-hidden="true"></i>
             </div>
+          </button>
 
-          </form>
         </div>
 
 
@@ -769,6 +762,33 @@
       <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <form>
+            <input type="hidden" name="route" value="search">
+            <div class="input-group">
+              <input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-selector=".search-results" data-v-vvveb-on="keyup">
+              <button class="btn btn-outline-primary border" type="submit" title="Search">
+                <div class="la-flip-horizontal">
+                  <i class="la la-search la-lg" aria-hidden="true"></i>
+                </div>
+              </button>
+            </div>
+          </form>
+
+          <div class="search-results">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Vvveb Common Js -->
   <script src="js/jquery.min.js"></script>
