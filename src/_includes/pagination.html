@@ -1,11 +1,11 @@
-<div data-pagination data-v-parent-component="@@component" data-v-parent-index="@@component-index"
+<div data-pagination data-v-parent-component="@@component" data-v-parent-index="@@component-index"  @@if (typeof query_string !== "undefined"){data-v-query-string="true"} 
 data-v-parameters='{@@if (typeof parameters === "object") {
 	@@for (let k in parameters) {"`+k+`":"`+parameters[k]+`"}
 }}'	
 > 
 
 	<nav data-v-if="pagecount > 1" >
-		<ul class="pagination pagination-sm justify-content-center" style="--bs-pagination-border-color:transparent;border-top: 1px solid var(--bs-border-color);padding-top: 1rem;">
+		<ul class="pagination pagination-sm justify-content-center pt-1 mt-1" style="--bs-pagination-border-color:transparent;border-top: 1px solid var(--bs-border-color);">
 		
 			<!--
 			<li class="page-item pager-first" data-first>

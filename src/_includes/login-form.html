@@ -6,12 +6,18 @@
 		
 		<div class="mb-3">
 			<label class="form-label" for="input-email">E-Mail Address</label>
-			<input type="email" name="email" value placeholder="E-Mail Address" id="input-email" class="form-control" required>
+			<input type="email" name="email" value placeholder="E-Mail Address" id="user-email" class="form-control" data-v-user-email required>
 		</div>
 		
 		<div class="mb-3">
 			<label class="form-label" for="input-password">Password</label>
-			<input type="password" minlength="4" autocorrect="off" autocomplete="current-password" name="password" value="" placeholder="Password" id="input-password" class="form-control" required>
+			
+			<div class="input-group">
+			  <input type="password" minlength="4" autocorrect="off" autocomplete="current-password" class="form-control" placeholder="Password"  id="user-password" name="password"  value="" aria-label="Password" required>
+			  <div class="input-group-append">
+				<button class="btn px-3 border border-start-0" type="button" onclick="togglePasswordInput(this, 'user-password')"><i class="la la-eye-slash"></i></button>
+			  </div>
+			</div>
 		</div>
 		
 		<button type="submit" value="Login" class="btn btn-primary btn-login@@if (typeof btnClass !== "undefined"){ @@btnClass}">
@@ -33,8 +39,8 @@
 		<div class="my-2"></div>
 
 		<hr>
-		<span>Don’t have an account?</span>
-		<a href="/user/signup" data-v-url="user/signup/index">Register Account</a>						
+		<span>Don’t have an account?</span><br>
+		<a href="/user/signup" data-v-url="user/signup/index">Register Account</a> <span class="text-body-tertiary">|</span> <a href="/user/login" data-v-url="user/login/index">Login</a>						
 					
 	</div>							
 	
@@ -48,8 +54,8 @@
 			<li><a href="user" data-v-url="user/index"><i class="la la-user la-lg text-muted m-1"></i><span>My account</span></a></li>
 			<li><a href="user/comments" data-v-url="user/comments/index"><i class="la la-comment la-lg text-muted m-1"></i><span>Comments</span></a></li>
 			<li><a href="user/orders" data-v-url="user/orders/index"><i class="la la-shopping-bag la-lg text-muted m-1"></i><span>Orders</span></a></li>
-			<li><a href="user/downloads" data-v-url="user/downloads/index"><i class="la la-hand-holding-heart la-lg text-muted m-1"></i><span>Wishlist</span></a></li>
-			<li><a href="user/wishlist" data-v-url="user/wishlist/index"><i class="la la-download la-lg text-muted m-1"></i><span>Downloads</span></a></li>
+			<li><a href="user/downloads" data-v-url="user/downloads/index"><i class="la la-hand-holding-heart la-lg text-muted m-1"></i><span>Downloads</span></a></li>
+			<li><a href="user/wishlist" data-v-url="user/wishlist/index"><i class="la la-download la-lg text-muted m-1"></i><span>Wishlist</span></a></li>
 			<li><a href="user/profile" data-v-url="user/profile/index"><i class="la la-cogs la-lg text-muted m-1"></i><span>Profile</span></a></li>
 		  </ul>									
 

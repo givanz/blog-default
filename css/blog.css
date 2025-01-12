@@ -57,6 +57,15 @@
       max-width: 100%;
       margin: 0 auto;
       height: auto; }
+    .post .post-content iframe {
+      vertical-align: middle;
+      max-width: 100%;
+      margin: 0 auto;
+      display: block; }
+    .post .post-content div.iframe {
+      display: flex;
+      justify-content: center;
+      position: relative; }
     .post .post-content .align-left {
       margin-right: 1rem; }
     .post .post-content .align-right {

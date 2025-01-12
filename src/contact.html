@@ -35,7 +35,7 @@
 				<h2 data-v-post-name>Contact us</h2>
 				-->
 				
-				<div data-v-post-content>
+				<div class="" data-v-post-content>
 					<p class="lead">
 						For support questions please use the <a href="https://github.com/givanz/Vvveb/discussions">community forum</a>.
 					</p>
@@ -77,8 +77,9 @@
 				
 				@@include('./_includes/notifications.html')
 				
-				<form method="post" action="">
+				<form method="post" action="" data-v-vvveb-action="submit" data-selector="[data-v-component-plugin-contact-form-form]" data-v-vvveb-on="submit">
 				   <input type="hidden" class="form-control" placeholder="First name" name="firstname-empty">	
+				   <input type="hidden" class="form-control" placeholder="Email" name="csrf" data-v-csrf>
 					
 				  <div class="row">
 					<div class="col">
@@ -119,9 +120,15 @@
 				  <div class="row mt-4">
 					<div class="col">
 					  <button type="submit" class="btn btn-primary">
-						<span>Submit</span>
-						<i class="la la-long-arrow-alt-right ms-1"></i>
-						</button>
+						<span class="loading d-none">
+							<span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+							</span>
+							<span>Submitting</span> ...
+						</span>
+
+						<span class="button-text">
+							<span>Submit</span><i class="la la-lg la-envelope opacity-50 ms-2"></i>
+						</span>
 					</div>
 				  </div>
 				</form>

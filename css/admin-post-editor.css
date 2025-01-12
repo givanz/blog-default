@@ -13719,7 +13719,7 @@ i.la {
 
 /* Variable fonts usage:*/
 :root {
-  --bs-font-sans-serif: "Inter",system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; }
+  --bs-font-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; }
 
 @supports (font-variation-settings: normal) {
   :root {
@@ -13993,6 +13993,207 @@ i.la {
   font-display: swap;
   src: url("../fonts/inter/InterDisplay-BlackItalic.woff2") format("woff2"); }
 
+@font-feature-values InterVariable {
+  @character-variant {
+    cv01: 1;
+    cv02: 2;
+    cv03: 3;
+    cv04: 4;
+    cv05: 5;
+    cv06: 6;
+    cv07: 7;
+    cv08: 8;
+    cv09: 9;
+    cv10: 10;
+    cv11: 11;
+    cv12: 12;
+    cv13: 13;
+    alt-1: 1;
+    /* Alternate one */
+    alt-3: 9;
+    /* Flat-top three */
+    open-4: 2;
+    /* Open four */
+    open-6: 3;
+    /* Open six */
+    open-9: 4;
+    /* Open nine */
+    lc-l-with-tail: 5;
+    /* Lower-case L with tail */
+    simplified-u: 6;
+    /* Simplified u */
+    alt-double-s: 7;
+    /* Alternate German double s */
+    uc-i-with-serif: 8;
+    /* Upper-case i with serif */
+    uc-g-with-spur: 10;
+    /* Capital G with spur */
+    single-story-a: 11;
+    /* Single-story a */
+    compact-lc-f: 12;
+    /* Compact f */
+    compact-lc-t: 13;
+    /* Compact t */ }
+  @styleset {
+    ss01: 1;
+    ss02: 2;
+    ss03: 3;
+    ss04: 4;
+    ss05: 5;
+    ss06: 6;
+    ss07: 7;
+    ss08: 8;
+    open-digits: 1;
+    /* Open digits */
+    disambiguation: 2;
+    /* Disambiguation (with zero) */
+    disambiguation-except-zero: 4;
+    /* Disambiguation (no zero) */
+    round-quotes-and-commas: 3;
+    /* Round quotes &amp; commas */
+    square-punctuation: 7;
+    /* Square punctuation */
+    square-quotes: 8;
+    /* Square quotes */
+    circled-characters: 5;
+    /* Circled characters */
+    squared-characters: 6;
+    /* Squared characters */ } }
+
+@font-feature-values Inter {
+  @character-variant {
+    cv01: 1;
+    cv02: 2;
+    cv03: 3;
+    cv04: 4;
+    cv05: 5;
+    cv06: 6;
+    cv07: 7;
+    cv08: 8;
+    cv09: 9;
+    cv10: 10;
+    cv11: 11;
+    cv12: 12;
+    cv13: 13;
+    alt-1: 1;
+    /* Alternate one */
+    alt-3: 9;
+    /* Flat-top three */
+    open-4: 2;
+    /* Open four */
+    open-6: 3;
+    /* Open six */
+    open-9: 4;
+    /* Open nine */
+    lc-l-with-tail: 5;
+    /* Lower-case L with tail */
+    simplified-u: 6;
+    /* Simplified u */
+    alt-double-s: 7;
+    /* Alternate German double s */
+    uc-i-with-serif: 8;
+    /* Upper-case i with serif */
+    uc-g-with-spur: 10;
+    /* Capital G with spur */
+    single-story-a: 11;
+    /* Single-story a */
+    compact-lc-f: 12;
+    /* Compact f */
+    compact-lc-t: 13;
+    /* Compact t */ }
+  @styleset {
+    ss01: 1;
+    ss02: 2;
+    ss03: 3;
+    ss04: 4;
+    ss05: 5;
+    ss06: 6;
+    ss07: 7;
+    ss08: 8;
+    open-digits: 1;
+    /* Open digits */
+    disambiguation: 2;
+    /* Disambiguation (with zero) */
+    disambiguation-except-zero: 4;
+    /* Disambiguation (no zero) */
+    round-quotes-and-commas: 3;
+    /* Round quotes &amp; commas */
+    square-punctuation: 7;
+    /* Square punctuation */
+    square-quotes: 8;
+    /* Square quotes */
+    circled-characters: 5;
+    /* Circled characters */
+    squared-characters: 6;
+    /* Squared characters */ } }
+
+@font-feature-values InterDisplay {
+  @character-variant {
+    cv01: 1;
+    cv02: 2;
+    cv03: 3;
+    cv04: 4;
+    cv05: 5;
+    cv06: 6;
+    cv07: 7;
+    cv08: 8;
+    cv09: 9;
+    cv10: 10;
+    cv11: 11;
+    cv12: 12;
+    cv13: 13;
+    alt-1: 1;
+    /* Alternate one */
+    alt-3: 9;
+    /* Flat-top three */
+    open-4: 2;
+    /* Open four */
+    open-6: 3;
+    /* Open six */
+    open-9: 4;
+    /* Open nine */
+    lc-l-with-tail: 5;
+    /* Lower-case L with tail */
+    simplified-u: 6;
+    /* Simplified u */
+    alt-double-s: 7;
+    /* Alternate German double s */
+    uc-i-with-serif: 8;
+    /* Upper-case i with serif */
+    uc-g-with-spur: 10;
+    /* Capital G with spur */
+    single-story-a: 11;
+    /* Single-story a */
+    compact-lc-f: 12;
+    /* Compact f */
+    compact-lc-t: 13;
+    /* Compact t */ }
+  @styleset {
+    ss01: 1;
+    ss02: 2;
+    ss03: 3;
+    ss04: 4;
+    ss05: 5;
+    ss06: 6;
+    ss07: 7;
+    ss08: 8;
+    open-digits: 1;
+    /* Open digits */
+    disambiguation: 2;
+    /* Disambiguation (with zero) */
+    disambiguation-except-zero: 4;
+    /* Disambiguation (no zero) */
+    round-quotes-and-commas: 3;
+    /* Round quotes &amp; commas */
+    square-punctuation: 7;
+    /* Square punctuation */
+    square-quotes: 8;
+    /* Square quotes */
+    circled-characters: 5;
+    /* Circled characters */
+    squared-characters: 6;
+    /* Squared characters */ } }
+
 /*!
   Theme: GitHub
   Description: Light theme as seen on github.com
@@ -14113,6 +14314,8 @@ i.la {
   .dropdown-menu {
     box-shadow: 0 0 28px rgba(var(--bs-body-color-rgb), 0.2);
     border: none; }
+    .dropdown-menu p:empty {
+      display: none; }
   .nav-item.dropdown {
     /*
 		> .nav-link.dropdown-toggle {
@@ -14150,7 +14353,10 @@ i.la {
     .nav-item.dropdown .dropdown-menu-start {
       left: 0; }
     .nav-item.dropdown:hover > .dropdown-toggle + .dropdown-menu,
-    .nav-item.dropdown:hover > .dropdown-menu {
+    .nav-item.dropdown:hover > .dropdown-menu, .nav-item.dropdown:focus > .dropdown-toggle + .dropdown-menu,
+    .nav-item.dropdown:focus > .dropdown-menu, .nav-item.dropdown:focus-within > .dropdown-toggle + .dropdown-menu,
+    .nav-item.dropdown:focus-within > .dropdown-menu, .nav-item.dropdown:focus-visible > .dropdown-toggle + .dropdown-menu,
+    .nav-item.dropdown:focus-visible > .dropdown-menu {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
@@ -14185,6 +14391,22 @@ i.la {
 .navbar .navbar-nav a.nav-link, .navbar .navbar-nav a.nav-link span:last-child {
   display: inline-block;
   white-space: nowrap; }
+
+.navbar-nav a.nav-link span > p:last-child {
+  margin-bottom: 0; }
+
+.navbar.sticky {
+  transition: 0.5s background;
+  background-color: rgba(var(--bs-body-bg-rgb), 0.9); }
+  .navbar.sticky.navbar-light {
+    background-color: var(--bs-body-bg);
+    background-color: rgba(var(--bs-body-bg-rgb), 0.9); }
+  .navbar.sticky.navbar-dark {
+    background-color: var(--bs-body-bg);
+    background-color: rgba(var(--bs-body-bg-rgb), 0.9); }
+
+.navbar .navbar-collapse {
+  position: relative; }
 
 .post {
   margin-bottom: 0rem; }
@@ -14245,6 +14467,15 @@ i.la {
       max-width: 100%;
       margin: 0 auto;
       height: auto; }
+    .post .post-content iframe {
+      vertical-align: middle;
+      max-width: 100%;
+      margin: 0 auto;
+      display: block; }
+    .post .post-content div.iframe {
+      display: flex;
+      justify-content: center;
+      position: relative; }
     .post .post-content .align-left {
       margin-right: 1rem; }
     .post .post-content .align-right {
@@ -14718,6 +14949,15 @@ body {
       max-width: 100%;
       margin: 0 auto;
       height: auto; }
+    body .post-content iframe {
+      vertical-align: middle;
+      max-width: 100%;
+      margin: 0 auto;
+      display: block; }
+    body .post-content div.iframe {
+      display: flex;
+      justify-content: center;
+      position: relative; }
     body .post-content .align-left {
       margin-right: 1rem; }
     body .post-content .align-right {

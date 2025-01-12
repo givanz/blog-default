@@ -48,36 +48,84 @@ function setCookie(name, value) {
 	document.cookie = name + "=" + value + ";path=/;domain=." + window.location.host.replace(/^.*?\./, '') + ";";
 }
 
-let theme = $("html").attr("data-bs-theme");
-if (theme && theme == "dark" || document.cookie.indexOf("theme=dark") > 0) {
-		$("#color-theme-switch i").removeClass("la-sun").addClass("la-moon");
-	$("html").attr("data-bs-theme", "dark");
-} else {
-	$("#color-theme-switch i").removeClass("la-moon").addClass("la-sun");
-}
-//$("html").attr("data-bs-theme", theme);
+let themeSwitch = document.querySelector("#color-theme-switch i");
+let theme = document.documentElement.dataset.bsTheme;
+let themeCookie = document.cookie.match(/theme=(.*);/);
+theme = theme ?? themeCookie[1] ?? "";
 
-$("#color-theme-switch").click(function () {
-	
-	let theme = $("html").attr("data-bs-theme");
-	
+if (theme) {
 	if (theme == "dark") {
-		theme = "light";
-		$("i",this).removeClass("la-moon").addClass("la-sun");
-	} else if (theme == "light" || theme == "auto" || !theme) {
-		theme = "dark";
-		$("i", this).removeClass("la-sun").addClass("la-moon");
-	} else {
-		theme = "auto";
+		let themeSwitch = document.querySelector("#color-theme-switch i");
+		themeSwitch.classList.remove("la-sun")
+		themeSwitch.classList.add("la-moon");
 	}
+}
 
-	$("html").attr("data-bs-theme", theme);
-	//localStorage.setItem("theme", theme);
-	setCookie("theme", theme);
-	//serverStorage.setItem();
+
+document.addEventListener("click", function (e) { 
+	let link = e.target.closest("#color-theme-switch");	
+	if (link) {
+		let themeSwitch = link.querySelector("i");
+		let theme = document.documentElement.dataset.bsTheme;
+	
+		if (theme == "dark") {
+			theme = "light";
+			themeSwitch.classList.remove("la-moon");
+			themeSwitch.classList.add("la-sun");
+		} else if (theme == "light" || theme == "auto" || !theme) {
+			theme = "dark";
+			themeSwitch.classList.remove("la-sun");
+			themeSwitch.classList.add("la-moon");
+		} else {
+			theme = "auto";
+		}
+
+		document.documentElement.dataset.bsTheme = theme;
+		//localStorage.setItem("theme", theme);
+		setCookie("theme", theme);
+		//serverStorage.setItem();
+	}
 });
 
+
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('js/service-worker.js').then((function(t) {})).catch((function(t) {}));
+  navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+        .then(function (registration){console.log('Service worker registered successfully');})
+        .catch(function (e){console.error('Error during service worker registration:', e);});
 }
 
+function togglePasswordInput(element, input) {
+	let password = document.getElementById(input);
+	if (password.type == "password") {
+		password.type = "text"; 
+		let i = element.querySelector("i")
+		i.classList.add("la-eye")
+		i.classList.remove("la-eye-slash");
+	} else {
+		password.type = "password";
+		let i = element.querySelector("i")
+		i.classList.remove("la-eye")
+		i.classList.add("la-eye-slash");
+	}
+}
+
+document.addEventListener("click", function (e) { 
+	let link = e.target.closest(".dropdown-toggle");
+	if (link) {
+		let parent = link.closest(".nav-toggle");
+		if (link.classList.contains("show")) {
+			parent.classList.add("show"); 
+		} else {
+			parent.classList.remove("show"); 
+		}
+	}
+});
+
+//theme ajax configuration
+
+//include elements that will be updated on ajax calls, include body > section to trigger whole page update if sections mismatch between different page structures
+VvvebTheme.ajax.siteContainer  = ["#site-content", ".inner-page-hero", "body > section"];
+//include posts, product and menu items for ajax
+//VvvebTheme.ajax.selector = "a[data-url], a[data-page-url], a[data-v-menu-item-url], a[data-v-post-url], a[data-v-product-url], a[data-v-cat-url], a[data-v-archive-url], a[data-v-admin-url], a[data-v-post-author-url], a[data-v-breadcrumb-item-url]"; 
+//skip home for dark hero and contact form for google js code
+//VvvebTheme.ajax.skipUrl = ["/", "/page/contact"];
