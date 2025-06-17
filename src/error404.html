@@ -27,8 +27,32 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
+	<div class="text-center">
+		<div class=" display-2">
+			<i class="la la-map-signs bg-warning me-2 bg-opacity-50" style="border-radius:100px;  width: 80px;height: 80px;display: inline-block;font-size: 80%;line-height:1.5"></i>
+		</div>
 		<h1>Page not found!</h1>
-		<p>The page you are looking for does not exist, try to use search or go to <a href="/">homepage</a></p>
+						<p class="text-muted mb-2 fw-normal">(error 404)</p>
+
+						<p class="lead">The page you are looking for has been moved or it does not exist</p>
+		
+		<div class="col-lg-6 mt-4 mb-5 mx-auto">
+			 <form action="/search" method="get"> 
+			  <input type="hidden" name="route" value="search">
+			  <div class="input-group">
+				<input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-selector=".search-results" data-v-vvveb-on="keyup">
+				<button class="btn btn-outline-primary border" type="submit" title="Search">
+				  <div class="la-flip-horizontal">
+					<i class="la la-search la-lg" aria-hidden="true"></i>
+				  </div>
+				</button>
+			  </div>
+			</form>
+		</div>
+		
+						<a href="/" class="btn btn-outline-primary btn-sm" data-url><i class="la la-home"></i><span>Go to homepage</span><i class="la la-arrow-right ms-2"></i></a>
+	
+	</div>
 
 	<div data-debug class="my-3">
 		<h5>Debug information</h5>

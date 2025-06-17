@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const fileinclude = require('gulp-file-include');
 //const sass = require('gulp-sass')(require('sass'));
 const sass = require('gulp-sass')(require('node-sass'));
-const formatHtml = require('gulp-format-html');
+const {formatHTML} = require('gulp-format-html');
 const through2 = require( 'through2' );    
 
 const touch = () => through2.obj( function( file, enc, cb ) {
@@ -18,7 +18,7 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(formatHtml())
+    .pipe(formatHTML())
     .pipe( touch() )
     .pipe(gulp.dest('./'));
 });
